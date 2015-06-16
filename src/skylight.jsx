@@ -20,7 +20,7 @@ var SkyLight = React.createClass({
             overlayStyles: styles.overlayStyles,
             dialogStyles: styles.dialogStyles,
             closeButtonStyle: styles.closeButtonStyle
-        }
+        };
     },
     getInitialState: function () {
         return {
@@ -68,19 +68,19 @@ var SkyLight = React.createClass({
         }
 
         if (this.props.showOverlay) {
-            overlay = (<div style={overlayStyles}></div>);
+            overlay = (<div style={overlayStyles} className="skylight-overlay"></div>);
         }
 
         return (
             <section className="skylight-wrapper">
                 {overlay}
-                <div style={dialogStyles}>
+                <div style={dialogStyles} className="skylight-content">
                     <a role="button" style={closeButtonStyle} onClick={this.hide}>&times;</a>
                     <h2>{this.props.title}</h2>
                     {this.props.children}
                 </div>
             </section>
-        )
+        );
     }
 });
 
